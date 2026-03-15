@@ -147,3 +147,17 @@ iw (для Wi-Fi)
 systemd
 
 📁 Структура файлов
+
+power-tweaks-hybrid-gpu/
+├── install.sh                 # Скрипт установки
+├── uninstall.sh              # Скрипт удаления
+├── switch-ppd-profile.sh     # Основной скрипт тюнинга
+├── power-profile-monitor.sh  # DBus монитор для PPD
+├── power-tweaks.service      # Systemd oneshot сервис
+├── power-tweaks.path         # Path монитор для AC статуса
+├── power-tweaks.timer        # Периодическая проверка
+├── power-profile-monitor.service # DBus монитор сервис
+├── 99-power-tweaks.rules     # Udev правило
+├── README.md                 # Этот файл
+├── CHANGELOG.md              # История изменений
+└── LICENSE                   # Лицензия MIT
