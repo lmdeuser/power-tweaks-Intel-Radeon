@@ -93,11 +93,15 @@ sudo udevadm monitor --property --subsystem-match=power_supply
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 cat /sys/class/scsi_host/host0/link_power_management_policy
 cat /sys/power/mem_sleep
+
 🗑️ Удаление
+
 # Запустить скрипт удаления
+
 sudo ./uninstall.sh
 
 # Или вручную:
+
 sudo systemctl disable --now power-tweaks.{service,path,timer} power-profile-monitor.service
 sudo rm /etc/systemd/system/power-tweaks.*
 sudo rm /etc/systemd/system/power-profile-monitor.service
@@ -106,7 +110,9 @@ sudo rm /usr/local/sbin/power-profile-monitor.sh
 sudo rm /etc/udev/rules.d/99-power-tweaks.rules
 sudo systemctl daemon-reload
 sudo udevadm control --reload-rules
+
 🔍 Диагностика
+
 Проблемы и решения
 Проблема	Возможное решение
 Скрипт не запускается при смене питания	sudo udevadm control --reload-rules && sudo udevadm trigger
@@ -115,6 +121,7 @@ PPD не переключается	Проверить systemctl status power-pr
 dGPU не отключается	Проверить lspci | grep Radeon и исправить PCI адрес в скрипте
 
 Настройка под своё железо
+
 Если у вас другая модель ноутбука, отредактируйте PCI адрес dGPU в скрипте:
 # Найдите свой GPU
 lspci | grep -E "VGA|3D|Radeon"
@@ -129,9 +136,6 @@ sudo journalctl -t power-tweaks -f
 
 # Только ошибки
 journalctl -t power-tweaks -p err
-
-
-
 
 
 Пакеты:
