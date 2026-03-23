@@ -191,7 +191,7 @@ lspci | grep -E "VGA|3D|Radeon"
 03:00.0 Display controller: Advanced Micro Devices, Inc. [AMD/ATI] Radeon RX 6500 XT
 ```
 
-### Редактиров��ние конфигурации
+### Редактирование конфигурации
 
 Откройте `switch-ppd-profile.sh` и обновите переменную `DGPU_PCI`:
 
